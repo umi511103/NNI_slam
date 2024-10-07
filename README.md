@@ -10,6 +10,7 @@ Feature Extraction:
   scan lines for independent processing.
   
   1.  Edge Feature Extraction:
+     
     Apply the Sobel operator to the left camera image of the KITTI dataset for convolution processing
     (the final fill ratio is not 0.5:0.5;please refer to the internal code for details).
 
@@ -24,12 +25,14 @@ Feature Extraction:
 
     
   2.  Surface Feature Extraction:
+     
     Apply Gaussian blur to the image.
 
     Use a sliding window detection method to identify surface points. If a point is identified as an edge point,
     it is added to the surface points set. Otherwise, it is discarded.
     
   3.  Building the Surface Feature KD-Tree and Applying Nearest Neighbor Interpolation (NNI):
+     
     Build a KD-Tree index for pc_out_surf.
 
     Use the KD-Tree to find the nearest points for interpolation.
